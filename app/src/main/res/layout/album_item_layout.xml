@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="album"
+            type="com.jyoti.albumssample.data.Album" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_8"
+        android:paddingBottom="@dimen/margin_8">
+
+        <TextView
+            android:id="@+id/tvIDTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/id"
+            android:minWidth="40dp"
+            android:gravity="right"
+            android:textColor="@color/lable_text_color"
+            android:textSize="@dimen/subheading"
+            app:layout_constraintBottom_toBottomOf="@id/tvIDValue"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toTopOf="@id/tvIDValue" />
+
+        <TextView
+            android:id="@+id/tvIDValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_16"
+            android:text='@{album.itemId + ""}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/subheading"
+            app:layout_constraintStart_toEndOf="@id/tvIDTitle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvUserTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user"
+            android:minWidth="40dp"
+            android:gravity="right"
+            android:textColor="@color/lable_text_color"
+            android:textSize="@dimen/subheading"
+            app:layout_constraintBottom_toBottomOf="@id/tvUserValue"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/tvIDTitle" />
+
+        <TextView
+            android:id="@+id/tvUserValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_16"
+            android:text='@{album.userId + ""}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/subheading"
+            app:layout_constraintStart_toEndOf="@id/tvUserTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvIDTitle" />
+
+        <TextView
+            android:id="@+id/tvTitleTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:minWidth="40dp"
+            android:gravity="right"
+            android:textColor="@color/lable_text_color"
+            android:textSize="@dimen/subheading"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/tvUserTitle" />
+
+        <TextView
+            android:id="@+id/tvTitleValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_16"
+            android:text="@{album.title}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/subheading"
+            app:layout_constraintStart_toEndOf="@id/tvTitleTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvUserTitle" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
